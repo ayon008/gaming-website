@@ -1,17 +1,14 @@
 import General from "@/fonts/General";
-import React from "react";
-const Button = ({
-  id,
-  title,
-  leftIcon,
-  containerClass,
-}: {
+import React, { ReactNode } from "react";
+type ButtonProps = {
   id: string;
   title: string;
-  leftIcon?: any;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
   containerClass?: string;
-  rightIcon?: any;
-}) => {
+};
+
+const Button = ({ id, title, leftIcon, containerClass }: ButtonProps) => {
   return (
     <div
       id={id}

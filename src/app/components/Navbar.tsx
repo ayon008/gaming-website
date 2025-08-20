@@ -9,9 +9,9 @@ import { useWindowScroll } from "react-use";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 const Navbar = () => {
-  const navContainerRef = useRef(null);
+  const navContainerRef = useRef<HTMLDivElement | null>(null);
   const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
-  const audioRef = useRef(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isAudionPlaying, setAudioPlaying] = useState<boolean>(false);
   const [isIndicator, setIndicatorActive] = useState<boolean>(false);
   const toggleAudionIndicator = () => {
@@ -27,22 +27,22 @@ const Navbar = () => {
   useEffect(() => {
     if (currentScrollY === 0) {
       setVisible(true);
-      navContainerRef.current.classList.remove("floating-nav");
+      navContainerRef?.current?.classList?.remove("floating-nav");
     } else if (currentScrollY > lastY) {
-      navContainerRef.current.classList.add("floating-nav");
+      navContainerRef?.current?.classList.add("floating-nav");
       setVisible(false);
     } else if (currentScrollY < lastY) {
       setVisible(true);
-      navContainerRef.current.classList.add("floating-nav");
+      navContainerRef?.current?.classList.add("floating-nav");
     }
     setY(currentScrollY);
   }, [currentScrollY, lastY]);
 
   useEffect(() => {
     if (isAudionPlaying) {
-      audioRef.current.play();
+      audioRef?.current?.play();
     } else {
-      audioRef.current.pause();
+      audioRef?.current?.pause();
     }
   }, [isAudionPlaying]);
 
@@ -97,7 +97,9 @@ const Navbar = () => {
                 return (
                   <div
                     key={bar}
-                    className={`indicator-line !bg-white ${isIndicator ? "active" : ""}`}
+                    className={`indicator-line !bg-white ${
+                      isIndicator ? "active" : ""
+                    }`}
                     style={{ animationDelay: `${bar}*0.1s` }}
                   ></div>
                 );
