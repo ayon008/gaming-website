@@ -48,7 +48,7 @@ const Story = () => {
           <AnimatedTitle
             title="the st<b>o</b>ry of <br /> a hidden real<b>m</b>"
             containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
-            sectionId="#story"
+            // sectionId="#story"
           />
           <div className="story-img-container">
             <div className="story-img-mask">
