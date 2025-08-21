@@ -28,7 +28,7 @@ const BentoTilt = ({
     setTransform(newTransform);
   };
 
-  const handleOnMouseLeave = (event) => {
+  const handleOnMouseLeave = (event: React.MouseEvent<HTMLDivElement>) => {
     setTransform("");
   };
 
