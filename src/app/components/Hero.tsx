@@ -64,10 +64,12 @@ const Hero = ({}) => {
   );
 
   useEffect(() => {
+    console.log(loadedVideo);
     if (loadedVideo === totalVideos) {
+      console.log(loadedVideo, "inside");
       setIsLoading(false);
     }
-  }, [loadedVideo, setIsLoading]);
+  }, [loadedVideo]);
 
   useGSAP(() => {
     gsap.set("#video-frame", {
