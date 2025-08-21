@@ -1,12 +1,7 @@
 "use client";
 import Robert from "@/fonts/Robert";
 import Zentry from "@/fonts/Zentry";
-import React, {
-  createContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { createContext, useEffect, useRef, useState } from "react";
 import Button from "../Shared/Buttons/Button";
 import { TiLocationArrow } from "react-icons/ti";
 import { useGSAP } from "@gsap/react";
@@ -123,6 +118,7 @@ const Hero = ({}) => {
                 id="current-video"
                 className="size-64 origin-center scale-150 object-cover object-center"
                 onLoadedData={handleVideoLoad}
+                preload="auto"
               />
             </div>
           </div>
@@ -136,6 +132,7 @@ const Hero = ({}) => {
               ref={nextVideoRef}
               src={getVideoSrc(currentIndex)}
               onLoadedData={handleVideoLoad}
+              preload="auto"
             ></video>
             <video
               src={getVideoSrc(currentIndex)}
@@ -144,6 +141,7 @@ const Hero = ({}) => {
               muted
               className="absolute top-0 left-0 size-full object-center object-cover"
               onLoadedData={handleVideoLoad}
+              preload="auto"
             ></video>
           </div>
         </div>
